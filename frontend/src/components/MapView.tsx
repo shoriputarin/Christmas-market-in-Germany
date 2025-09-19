@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useRef } from 'react';
+﻿import { useEffect, useMemo, useCallback, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import type { Market } from '../types';
@@ -24,38 +24,8 @@ export function MapView({ markets, selectedMarketId, onSelect }: MapViewProps) {
     return L.latLngBounds(latLngs);
   }, [markets]);
 
-  const markersRef = useRef(new Map<string, L.Marker>());
-
-  const icons = useMemo(() => {
-    const baseOptions = {
-      iconSize: [28, 28] as [number, number],
-      iconAnchor: [14, 27] as [number, number],
-      popupAnchor: [0, -24] as [number, number],
-    };
-
-    const defaultIcon = L.divIcon({
-      ...baseOptions,
-      className: 'map-marker',
-      html: '<span class="map-marker__inner"></span>',
-    });
-
-    const activeIcon = L.divIcon({
-      ...baseOptions,
-      className: 'map-marker map-marker--active',
-      html: '<span class="map-marker__inner"></span>',
-    });
-
-    return { defaultIcon, activeIcon };
-  }, []);
-
-  useEffect(() => {
-    if (!selectedMarketId) {
-      return;
-    }
-
-    const marker = markersRef.current.get(selectedMarketId);
-    marker?.openPopup();
-  }, [selectedMarketId]);
+  const markerIcons = useMemo(createMarkerIcons, []);
+  const registerMarker = useMarkerPopup(selectedMarketId);
 
   return (
     <div className="map-container" role="application" aria-label="地図表示">
@@ -71,14 +41,8 @@ export function MapView({ markets, selectedMarketId, onSelect }: MapViewProps) {
           <Marker
             key={market.id}
             position={[market.coordinates.lat, market.coordinates.lng]}
-            icon={market.id === selectedMarketId ? icons.activeIcon : icons.defaultIcon}
-            ref={(markerInstance) => {
-              if (markerInstance) {
-                markersRef.current.set(market.id, markerInstance);
-              } else {
-                markersRef.current.delete(market.id);
-              }
-            }}
+            icon={market.id === selectedMarketId ? markerIcons.active : markerIcons.default}
+            ref={registerMarker(market.id)}
             eventHandlers={{
               click: () => onSelect(market),
             }}
@@ -112,4 +76,48 @@ function FitBounds({ bounds }: { bounds: L.LatLngBoundsExpression }) {
   }, [map, bounds]);
 
   return null;
+}
+
+function createMarkerIcons() {
+  const baseOptions = {
+    iconSize: [28, 28] as [number, number],
+    iconAnchor: [14, 27] as [number, number],
+    popupAnchor: [0, -24] as [number, number],
+  };
+
+  return {
+    default: L.divIcon({
+      ...baseOptions,
+      className: 'map-marker',
+      html: '<span class="map-marker__inner"></span>',
+    }),
+    active: L.divIcon({
+      ...baseOptions,
+      className: 'map-marker map-marker--active',
+      html: '<span class="map-marker__inner"></span>',
+    }),
+  };
+}
+
+function useMarkerPopup(selectedMarketId: string | null) {
+  const markersRef = useRef(new Map<string, L.Marker>());
+
+  useEffect(() => {
+    if (!selectedMarketId) {
+      return;
+    }
+
+    const marker = markersRef.current.get(selectedMarketId);
+    marker?.openPopup();
+  }, [selectedMarketId]);
+
+  return useCallback((marketId: string) => {
+    return (markerInstance: L.Marker | null) => {
+      if (markerInstance) {
+        markersRef.current.set(marketId, markerInstance);
+      } else {
+        markersRef.current.delete(marketId);
+      }
+    };
+  }, []);
 }
