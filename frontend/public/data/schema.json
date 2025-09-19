@@ -1,0 +1,77 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Christmas Markets Dataset",
+  "type": "object",
+  "required": ["version", "source", "generated_at", "markets"],
+  "properties": {
+    "version": { "type": "string" },
+    "source": { "type": "string", "format": "uri" },
+    "generated_at": { "type": "string", "format": "date" },
+    "markets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "year",
+          "name",
+          "city",
+          "region",
+          "venue",
+          "coordinates",
+          "period",
+          "status",
+          "last_verified"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "year": { "type": "integer", "minimum": 2000 },
+          "name": {
+            "type": "object",
+            "required": ["ja"],
+            "properties": {
+              "ja": { "type": "string" },
+              "de": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "city": { "type": "string" },
+          "region": { "type": "string" },
+          "venue": { "type": "string" },
+          "address": { "type": "string" },
+          "coordinates": {
+            "type": "object",
+            "required": ["lat", "lng"],
+            "properties": {
+              "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+              "lng": { "type": "number", "minimum": -180, "maximum": 180 }
+            },
+            "additionalProperties": false
+          },
+          "period": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": { "type": "string", "format": "date" },
+              "end": { "type": "string", "format": "date" },
+              "note": { "type": "string" },
+              "is_estimated": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          },
+          "url": { "type": ["string", "null"], "format": "uri" },
+          "status": { "type": "string", "enum": ["scheduled", "ongoing", "ended", "unknown"] },
+          "opening_hours": { "type": "string" },
+          "last_verified": { "type": "string", "format": "date" },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

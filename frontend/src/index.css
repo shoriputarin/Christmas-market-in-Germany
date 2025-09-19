@@ -1,0 +1,40 @@
+﻿:root {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Segoe UI", system-ui, -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f4ff;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f0f4ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  width: 100%;
+}

@@ -7,14 +7,14 @@
 ## 1. 目的 / ゴール
 
 * 在日ドイツ大使館サイトに掲載の **クリスマスマーケット情報**（出典: [https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164](https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164)）を地図上に可視化し、閲覧者が開催地・開催日・詳細情報を直感的に確認できるようにする。
-* モバイル優先で、直近の開催可否や日付を素早く確認できる UI を提供する。
+* **PC優先**で、直近の開催可否や日付を素早く確認できる UI を提供する（レスポンシブ対応は将来の拡張）。
 
 ## 2. スコープ
 
 * **対象デバイス**: **PC（デスクトップ）優先**。画面幅 1280px 以上を主ターゲット（将来スマホ対応を拡張で検討）。
 * **必須 (MVP)**
 
-  * 日本全国の開催都市にマップピン表示
+  * **ドイツ国内**の開催都市にマップピン表示
   * ピン（またはリスト）をクリック/タップで詳細ポップアップ表示
   * 基本情報: 名称、都市名、会場、開催期間（日付）、公式リンク
   * **デスクトップ向けUI**: 左（または右）にサイドパネル（リスト/詳細）、反対側に地図の2カラム
@@ -28,7 +28,7 @@
   * ソーシャル共有、OGP 画像
   * PWA（オフライン閲覧）
 
-## 3. 利用者像 / ユースケース 利用者像 / ユースケース
+## 3. 利用者像 / ユースケース
 
 * 旅行者/家族連れ: 近場のマーケットと日程をすぐに知りたい
 * 主催・関連団体: 情報の正確性、公式サイトへの導線を確保したい
@@ -58,7 +58,16 @@
   * キーボード操作: リスト→ピンへフォーカス移動
   * 地図操作の代替: リスト選択でポップアップを開く
 
-## 5. 機能要件 機能要件
+### アクセシビリティ達成基準（Leaflet 前提・MVP）
+
+* **代替ナビゲーション**: サイドパネルのリストから全スポットに到達可能。各リスト項目は `button` として実装し、`aria-label` にマーケット名＋都市を付与。
+* **ポップアップの告知**: ピン/リスト操作で詳細が開いたら、`role="dialog"`（または `aria-live=polite` な領域）へフォーカス移動。閉じるとトリガー要素へフォーカスを戻す。
+* **キーボード操作**: `Tab` でヘッダー→リスト→地図→フッターの順に到達。地図コンテナは `tabindex="-1"` とし、マップ内フォーカスはピン（`button`）のみに限定。
+* **ラベル**: 地図コンテナに `aria-label="ドイツのクリスマスマーケット地図"`。ピン要素に `aria-label` で名称/都市/期間の要約を付与。
+* **コントラスト**: テキストとアイコンは WCAG 2.2 AA（4.5:1）以上。ポップアップのフォーカスリングは明示的に可視化。
+* **受け入れテスト**: NVDA（Windows/Chrome）で、①リストからベルリンを開く→詳細読み上げ→閉じる→フォーカスが元に戻る、②ピンに `Tab` 到達できる、を確認。
+
+## 5. 機能要件
 
 * **地図表示**: OSM タイル + Leaflet（候補）。ピン表示、ズーム/パン。
 * **データ読込**: `/data/markets.json` を静的配信。フロントでフェッチしレンダリング。
@@ -69,7 +78,7 @@
 
 ## 6. 非機能要件
 
-* **パフォーマンス**: LCP < 2.5s（4G/モバイル想定）、初回データ <= 200KB（目安）
+* **パフォーマンス**: LCP < 2.0s（有線/デスクトップ想定・10Mbps相当）、初回データ <= 200KB（目安）
 * **アクセシビリティ**: キーボード操作、コントラスト比、ARIA（マップ操作の代替パターン）
 * **多言語**: i18n フレームワーク採用（拡張）
 * **SEO**: メタ/OGP、サイトマップ（静的）
@@ -77,6 +86,61 @@
 * **ライセンス表記**: © OpenStreetMap contributors、Leaflet、データ出典（在日ドイツ大使館サイト）
 
 ```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Christmas Markets Dataset",
+  "type": "object",
+  "required": ["version", "source", "markets"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" },
+    "source": { "type": "string", "format": "uri" },
+    "generated_at": { "type": "string", "format": "date" },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "city", "lat", "lng", "url"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": false,
+            "properties": {
+              "ja": { "type": "string" },
+              "en": { "type": "string" },
+              "de": { "type": "string" }
+            }
+          },
+          "city": { "type": "string" },
+          "region": { "type": "string" },
+          "venue": { "type": "string" },
+          "address": { "type": "string" },
+          "dates": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": { "type": "string", "format": "date" },
+              "end": { "type": "string", "format": "date" },
+              "note": { "type": "string" }
+            }
+          },
+          "times": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "source_url": { "type": "string", "format": "uri" },
+          "organizer": { "type": "string" },
+          "admission": { "type": "string" },
+          "lat": { "type": "number" },
+          "lng": { "type": "number" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "last_verified": { "type": "string", "format": "date" }
+        }
+      }
+    }
+  }
+}
 ```
 
 ### ７．データ方針
@@ -94,7 +158,7 @@
 * **CI**: JSON スキーマ検証 + Lint（ESLint/TypeScript/Prettier）
 * **解析（任意）**: Plausible（クッキー不要）/ GA4
 
-## 9. API / ファイル構成（静的サイト想定） API / ファイル構成（静的サイト想定）
+## 9. API / ファイル構成（静的サイト想定）
 
 * `/index.html` — 1 ページ
 * `/assets/*` — 画像/アイコン
@@ -108,7 +172,7 @@
 * リスト or ピンをクリックで名称・都市・期間・公式リンクが見える
 * 出典と地図ライセンス表記がページに明示される
 
-## 11. テスト観点 テスト観点
+## 11. テスト観点
 
 * JSON 読込/パース（失敗時のフォールバック）
 * ピン重なり時のタップ/クリック精度
@@ -141,7 +205,28 @@
 
 * 本ドキュメント末尾の「主要都市リンク（出典ベース）」を元に `/data/markets.json` を起票
 * 年度情報や日付は後追いで更新（初期は URL と都市名・概略のみ）
-*
+* 初期投入対象（都市 / 公式または観光局リンク）
+
+  * ベルリン — weihnachteninberlin.de
+  * ミュンヘン — muenchen.travel
+  * ハンブルク — hamburger-weihnachtsmarkt.com
+  * ケルン — koelnerweihnachtsmarkt.de
+  * フランクフルト — frankfurt-tourismus.de
+  * ドレスデン — weihnachtsmarkt-dresden.de
+  * シュトゥットガルト — stuttgarter-weihnachtsmarkt.de
+  * ライプツィヒ — leipzig.de/weihnachtsmarkt
+  * ニュルンベルク — christkindlesmarkt.de
+  * リューベック — luebeck-tourismus.de/kultur/weihnachtsstadt-des-nordens
+  * ハイデルベルク — heidelberg-marketing.de
+  * エアフルト — erfurter-weihnachtsmarkt.eu
+  * アウグスブルク — augsburgerchristkindlesmarkt.com
+  * アンナベルク・ブッフホルツ — annaberg-buchholz.de
+  * デュッセルドルフ — （URL未記載のため本文参照・調査中）
+  * ドルトムント — （URL未記載のため本文参照・調査中）
+
+> 備考: 各都市は市の中心または主要会場の座標を採用。`source_url` に都市別の参照 URL（可能なら各都市の公式マーケットページ）を保持。
+
+**補足**: データの詳細プレビューは *Enriched\_Christmas\_Market\_Seed\_\_preview\_* を参照（キャンバス内の表ビュー）。
 
 ---
 

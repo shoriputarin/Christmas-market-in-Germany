@@ -1,0 +1,89 @@
+{
+  "version": "2025-1",
+  "source": "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164",
+  "generated_at": "2025-09-19",
+  "markets": [
+    {
+      "id": "berlin",
+      "name_ja": "ベルリン",
+      "url": "https://www.weihnachteninberlin.de"
+    },
+    {
+      "id": "muenchen",
+      "name_ja": "ミュンヘン",
+      "url": "https://www.muenchen.travel/"
+    },
+    {
+      "id": "hamburg",
+      "name_ja": "ハンブルク",
+      "url": "http://www.hamburger-weihnachtsmarkt.com/"
+    },
+    {
+      "id": "koeln",
+      "name_ja": "ケルン",
+      "url": "https://www.koelnerweihnachtsmarkt.de"
+    },
+    {
+      "id": "frankfurt",
+      "name_ja": "フランクフルト",
+      "url": "https://www.frankfurt-tourismus.de/"
+    },
+    {
+      "id": "stuttgart",
+      "name_ja": "シュトゥットガルト",
+      "url": "https://www.stuttgarter-weihnachtsmarkt.de"
+    },
+    {
+      "id": "dresden",
+      "name_ja": "ドレスデン",
+      "url": "https://www.weihnachtsmarkt-dresden.de"
+    },
+    {
+      "id": "leipzig",
+      "name_ja": "ライプツィヒ",
+      "url": "https://www.leipzig.de/weihnachtsmarkt"
+    },
+    {
+      "id": "nuernberg",
+      "name_ja": "ニュルンベルク",
+      "url": "https://www.christkindlesmarkt.de"
+    },
+    {
+      "id": "duesseldorf",
+      "name_ja": "デュッセルドルフ",
+      "url": null,
+      "note": "出典ページにURLの明示なし（本文のみ）"
+    },
+    {
+      "id": "dortmund",
+      "name_ja": "ドルトムント",
+      "url": null,
+      "note": "出典ページにURLの明示なし（本文のみ）"
+    },
+    {
+      "id": "luebeck",
+      "name_ja": "リューベック",
+      "url": "https://www.luebeck-tourismus.de/kultur/weihnachtsstadt-des-nordens"
+    },
+    {
+      "id": "heidelberg",
+      "name_ja": "ハイデルベルク",
+      "url": "https://www.heidelberg-marketing.de/"
+    },
+    {
+      "id": "erfurt",
+      "name_ja": "エアフルト",
+      "url": "https://www.erfurter-weihnachtsmarkt.eu"
+    },
+    {
+      "id": "augsburg",
+      "name_ja": "アウグスブルク",
+      "url": "https://augsburgerchristkindlesmarkt.com"
+    },
+    {
+      "id": "annaberg-buchholz",
+      "name_ja": "アンナベルク・ブッフホルツ",
+      "url": "https://www.annaberg-buchholz.de"
+    }
+  ]
+}
