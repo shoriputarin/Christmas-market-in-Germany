@@ -23,6 +23,7 @@ export interface Market {
   slug: string;
   year: number;
   name: MarketName;
+  country: string;
   city: string;
   region: string;
   venue: string;
@@ -34,11 +35,13 @@ export interface Market {
   opening_hours?: string;
   last_verified: string;
   notes?: string;
+  sources?: string[];
 }
 
 export interface MarketsDataset {
   version: string;
-  source: string;
+  source?: string;
+  sources?: string[];
   generated_at: string;
   markets: Market[];
 }

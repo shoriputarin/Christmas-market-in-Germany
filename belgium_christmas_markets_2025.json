@@ -1,0 +1,297 @@
+{
+  "version": "2025-1",
+  "country": "Belgium",
+  "source_primary": "https://www.arukikata.co.jp/tokuhain/275044/",
+  "generated_at": "2025-09-19",
+  "markets": [
+    {
+      "id": "brussels",
+      "name": {
+        "ja": "ブリュッセル（ウィンター・ワンダーズ）",
+        "de": "Brüssel Winter Wonders",
+        "en": "Brussels Winter Wonders"
+      },
+      "city": "Bruxelles / Brussel",
+      "region": "Brussels-Capital Region",
+      "lat": 50.8503,
+      "lng": 4.3517,
+      "official_url": "https://www.brussels.be/winter-wonders",
+      "source_url": [
+        "https://www.brussels.be/winter-wonders"
+      ],
+      "dates": null,
+      "dates_note": "Dates TBA (multiple guides report 2025-11-28 to 2026-01-04)"
+    },
+    {
+      "id": "bruges",
+      "name": {
+        "ja": "ブルージュ（ウィンターグロウ）",
+        "de": "Brügge Winter Glow",
+        "en": "Bruges Winter Glow"
+      },
+      "city": "Brugge",
+      "region": "Flanders",
+      "lat": 51.2093,
+      "lng": 3.2247,
+      "official_url": "https://www.visitbruges.be/en/winter-glow",
+      "source_url": [
+        "https://www.visitbruges.be/en/winter-glow"
+      ],
+      "dates": {
+        "start": "2025-11-21",
+        "end": "2026-01-04"
+      },
+      "dates_note": "Official"
+    },
+    {
+      "id": "antwerp",
+      "name": {
+        "ja": "アントワープ（ウィンター・イン・アントワープ）",
+        "de": "Antwerpen Weihnachtsmarkt",
+        "en": "Winter in Antwerp"
+      },
+      "city": "Antwerpen / Anvers",
+      "region": "Flanders",
+      "lat": 51.2194,
+      "lng": 4.4025,
+      "official_url": "https://www.antwerpen.be/product/vendor-at-christmas-market",
+      "source_url": [
+        "https://www.antwerpen.be/product/vendor-at-christmas-market"
+      ],
+      "dates": {
+        "start": "2025-12-05",
+        "end": "2026-01-04"
+      },
+      "dates_note": "Official (city vendor info)"
+    },
+    {
+      "id": "ghent",
+      "name": {
+        "ja": "ゲント（ウィンターフェステン）",
+        "de": "Gent Winterfeste",
+        "en": "Ghent Winter Festival"
+      },
+      "city": "Gent / Gand",
+      "region": "Flanders",
+      "lat": 51.0543,
+      "lng": 3.7174,
+      "official_url": "https://gentsewinterfeesten.be/",
+      "source_url": [
+        "https://gentsewinterfeesten.be/",
+        "https://visit.gent.be/en/calendar/christmas-market"
+      ],
+      "dates": null,
+      "dates_note": "December 2025 (TBA)"
+    },
+    {
+      "id": "leuven",
+      "name": {
+        "ja": "ルーヴェン（ルーヴェン・クリスマスマーケット）",
+        "de": "Löwen Weihnachtsmarkt",
+        "en": "Leuven Christmas Market"
+      },
+      "city": "Leuven / Louvain",
+      "region": "Flanders",
+      "lat": 50.8798,
+      "lng": 4.7005,
+      "official_url": "https://leuvensekerstmarkt.com/",
+      "source_url": [
+        "https://leuvensekerstmarkt.com/",
+        "https://www.visitleuven.be/en/christmas-market"
+      ],
+      "dates": null,
+      "dates_note": "TBA"
+    },
+    {
+      "id": "liege",
+      "name": {
+        "ja": "リエージュ（ヴィラージュ・ド・ノエル）",
+        "de": "Lüttich Weihnachtsdorf",
+        "en": "Liège Christmas Village"
+      },
+      "city": "Liège / Luik",
+      "region": "Wallonia",
+      "lat": 50.6326,
+      "lng": 5.5797,
+      "official_url": "https://www.villagedenoel.be/en",
+      "source_url": [
+        "https://www.villagedenoel.be/en",
+        "https://www.visitezliege.be/en/offre/le-village-de-noel"
+      ],
+      "dates": {
+        "start": "2025-11-28",
+        "end": "2026-01-04"
+      },
+      "dates_note": "Official tourism"
+    },
+    {
+      "id": "hasselt",
+      "name": {
+        "ja": "ハッセルト（ウィンターランド）",
+        "de": "Hasselt Winterland",
+        "en": "Winterland Hasselt"
+      },
+      "city": "Hasselt",
+      "region": "Flanders",
+      "lat": 50.9307,
+      "lng": 5.3326,
+      "official_url": "https://www.winterland.be/en",
+      "source_url": [
+        "https://www.winterland.be/en"
+      ],
+      "dates": null,
+      "dates_note": "TBA"
+    },
+    {
+      "id": "ostend",
+      "name": {
+        "ja": "オーステンデ（ウィンター・イン・ザ・パーク）",
+        "de": "Ostende Winter im Park",
+        "en": "Winter in the Park (Ostend)"
+      },
+      "city": "Oostende / Ostend",
+      "region": "Flanders",
+      "lat": 51.2167,
+      "lng": 2.9167,
+      "official_url": "https://www.visitoostende.be/en/winter-park",
+      "source_url": [
+        "https://www.visitoostende.be/en/winter-park"
+      ],
+      "dates": null,
+      "dates_note": "TBA"
+    },
+    {
+      "id": "mons",
+      "name": {
+        "ja": "モンス（モンス・クール・アン・ネージュ）",
+        "de": "Mons Coeur en Neige",
+        "en": "Mons Cœur en Neige"
+      },
+      "city": "Mons / Bergen",
+      "region": "Wallonia",
+      "lat": 50.4542,
+      "lng": 3.9523,
+      "official_url": "https://monscoeurenneige.be/",
+      "source_url": [
+        "https://monscoeurenneige.be/",
+        "https://visitwallonia.fr/fr/produit/evenement/marche-de-noel/mons-coeur-en-neige-profitez-des-feeries-de-noel/3892"
+      ],
+      "dates": null,
+      "dates_note": "Dec 2025–Jan 2026 (TBA)"
+    },
+    {
+      "id": "namur",
+      "name": {
+        "ja": "ナミュール（ナミュール・クリスマスマーケット）",
+        "de": "Namur Weihnachtsmarkt",
+        "en": "Namur Christmas Market"
+      },
+      "city": "Namur / Namen",
+      "region": "Wallonia",
+      "lat": 50.4674,
+      "lng": 4.8718,
+      "official_url": "https://visitwallonia.com/en-gb/content/namur-christmas-market",
+      "source_url": [
+        "https://visitwallonia.com/en-gb/content/namur-christmas-market",
+        "https://www.namurtourisme.be/en/evenements/marche-de-noel-de-namur/"
+      ],
+      "dates": {
+        "start": "2025-11-28",
+        "end": "2025-12-31"
+      },
+      "dates_note": "Official tourism"
+    },
+    {
+      "id": "mechelen",
+      "name": {
+        "ja": "メヘレン（ウィンター）",
+        "de": "Mechelen Winter",
+        "en": "Mechelen Winter"
+      },
+      "city": "Mechelen / Malines",
+      "region": "Flanders",
+      "lat": 51.025,
+      "lng": 4.4777,
+      "official_url": "https://visit.mechelen.be/mechelen-houdt-je-warm-",
+      "source_url": [
+        "https://visit.mechelen.be/mechelen-houdt-je-warm-"
+      ],
+      "dates": null,
+      "dates_note": "TBA"
+    },
+    {
+      "id": "ypres",
+      "name": {
+        "ja": "イーペル（クリスマス・イン・イーペル）",
+        "de": "Ypern Weihnachtsmarkt",
+        "en": "Christmas in Ypres"
+      },
+      "city": "Ieper / Ypres",
+      "region": "Flanders",
+      "lat": 50.851,
+      "lng": 2.885,
+      "official_url": "https://www.toerismeieper.be/christmas-in-ypres",
+      "source_url": [
+        "https://www.toerismeieper.be/christmas-in-ypres"
+      ],
+      "dates": null,
+      "dates_note": "Likely late Nov 2025 – early Jan 2026 (TBA)"
+    },
+    {
+      "id": "kortrijk",
+      "name": {
+        "ja": "コルトレイク（ウィンター・イン・コルトレイク）",
+        "de": "Kortrijk Weihnachtsmarkt",
+        "en": "Winter in Kortrijk"
+      },
+      "city": "Kortrijk / Courtrai",
+      "region": "Flanders",
+      "lat": 50.826,
+      "lng": 3.2649,
+      "official_url": "https://www.kerstmarktkortrijk.be/",
+      "source_url": [
+        "https://www.kerstmarktkortrijk.be/"
+      ],
+      "dates": null,
+      "dates_note": "TBA"
+    },
+    {
+      "id": "tournai",
+      "name": {
+        "ja": "トゥルネー（トゥルネー・ディヴェール）",
+        "de": "Tournai d'Hiver",
+        "en": "Tournai d'Hiver"
+      },
+      "city": "Tournai / Doornik",
+      "region": "Wallonia",
+      "lat": 50.6072,
+      "lng": 3.389,
+      "official_url": "https://www.tournai.be/tournai-dhiver",
+      "source_url": [
+        "https://www.tournai.be/tournai-dhiver",
+        "https://visitwallonia.be/fr-be/content/marche-de-noel-tournai-tournai-dhiver"
+      ],
+      "dates": null,
+      "dates_note": "December 2025 (TBA)"
+    },
+    {
+      "id": "charleroi",
+      "name": {
+        "ja": "シャルルロワ（ヴィラージュ・ド・ノエル）",
+        "de": "Charleroi Weihnachtsdorf",
+        "en": "Charleroi Christmas Village"
+      },
+      "city": "Charleroi",
+      "region": "Wallonia",
+      "lat": 50.4108,
+      "lng": 4.4446,
+      "official_url": "https://charleroi-noel.be/",
+      "source_url": [
+        "https://charleroi-noel.be/",
+        "https://visitwallonia.fr/fr/produit/evenement/marche-de-noel/le-village-de-noel-a-charleroi/6787"
+      ],
+      "dates": null,
+      "dates_note": "Nov 2025 – Jan 2026 (TBA)"
+    }
+  ]
+}

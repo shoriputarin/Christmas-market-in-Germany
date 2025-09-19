@@ -1,82 +1,485 @@
-﻿{
+{
   "version": "2025-1",
-  "source": "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164",
+  "source": "Multiple sources（各マーケットの sources を参照）",
+  "sources": [
+    "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164",
+    "https://www.arukikata.co.jp/tokuhain/275044/"
+  ],
   "generated_at": "2025-09-19",
   "markets": [
     {
-      "id": "berlin-2025",
-      "slug": "berlin",
+      "id": "belgium-antwerp-2025",
+      "slug": "antwerp",
       "year": 2025,
       "name": {
-        "ja": "ベルリン クリスマスマーケット",
-        "de": "Weihnachtsmärkte in Berlin",
-        "en": "Berlin Christmas Markets"
+        "ja": "アントウェルペン ウィンター・イン・アントワープ",
+        "en": "Winter in Antwerp",
+        "de": "Antwerpen Weihnachtsmarkt"
       },
-      "city": "ベルリン",
-      "region": "Berlin",
-      "venue": "ジャンダルメンマルクト広場 ほか",
-      "address": "Gendarmenmarkt, 10117 Berlin",
-      "coordinates": { "lat": 52.516275, "lng": 13.392514 },
+      "country": "Belgium",
+      "city": "アントウェルペン（Antwerpen / Anvers）",
+      "region": "Flanders",
+      "venue": "大聖堂広場からシェルデ川沿い",
+      "coordinates": {
+        "lat": 51.2194,
+        "lng": 4.4025
+      },
       "period": {
-        "start": "2025-11-24",
+        "start": "2025-12-05",
+        "end": "2026-01-04",
+        "note": "市公式ベンダー募集より",
+        "is_estimated": false
+      },
+      "url": "https://www.antwerpen.be/product/vendor-at-christmas-market",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.antwerpen.be/product/vendor-at-christmas-market",
+        "https://www.arukikata.co.jp/tokuhain/275044/"
+      ]
+    },
+    {
+      "id": "belgium-ypres-2025",
+      "slug": "ypres",
+      "year": 2025,
+      "name": {
+        "ja": "イーペル クリスマスマーケット",
+        "en": "Christmas in Ypres",
+        "de": "Ypern Weihnachtsmarkt"
+      },
+      "country": "Belgium",
+      "city": "イーペル（Ieper / Ypres）",
+      "region": "Flanders",
+      "venue": "グローテマルクト",
+      "coordinates": {
+        "lat": 50.851,
+        "lng": 2.885
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "例年11月末〜1月初旬（発表待ち）",
+        "is_estimated": true
+      },
+      "url": "https://www.toerismeieper.be/christmas-in-ypres",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.toerismeieper.be/christmas-in-ypres"
+      ]
+    },
+    {
+      "id": "belgium-ostend-2025",
+      "slug": "ostend",
+      "year": 2025,
+      "name": {
+        "ja": "オーステンデ ウィンター・イン・ザ・パーク",
+        "en": "Winter in the Park (Ostend)",
+        "de": "Ostende Winter im Park"
+      },
+      "country": "Belgium",
+      "city": "オーステンデ（Oostende / Ostend）",
+      "region": "Flanders",
+      "venue": "レオポルド公園（Winter in the Park）",
+      "coordinates": {
+        "lat": 51.2167,
+        "lng": 2.9167
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "日程未発表",
+        "is_estimated": true
+      },
+      "url": "https://www.visitoostende.be/en/winter-park",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.visitoostende.be/en/winter-park"
+      ]
+    },
+    {
+      "id": "belgium-kortrijk-2025",
+      "slug": "kortrijk",
+      "year": 2025,
+      "name": {
+        "ja": "コルトレイク ウィンター",
+        "en": "Winter in Kortrijk",
+        "de": "Kortrijk Weihnachtsmarkt"
+      },
+      "country": "Belgium",
+      "city": "コルトレイク（Kortrijk / Courtrai）",
+      "region": "Flanders",
+      "venue": "グローテマルクトとブロエルタワー周辺",
+      "coordinates": {
+        "lat": 50.826,
+        "lng": 3.2649
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "日程未定",
+        "is_estimated": true
+      },
+      "url": "https://www.kerstmarktkortrijk.be/",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.kerstmarktkortrijk.be/"
+      ]
+    },
+    {
+      "id": "belgium-charleroi-2025",
+      "slug": "charleroi",
+      "year": 2025,
+      "name": {
+        "ja": "シャルルロワ クリスマスビレッジ",
+        "en": "Charleroi Christmas Village",
+        "de": "Charleroi Weihnachtsdorf"
+      },
+      "country": "Belgium",
+      "city": "シャルルロワ（Charleroi）",
+      "region": "Wallonia",
+      "venue": "市中心部（Place Verte 周辺）",
+      "coordinates": {
+        "lat": 50.4108,
+        "lng": 4.4446
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "2025年11月〜2026年1月予定（発表待ち）",
+        "is_estimated": true
+      },
+      "url": "https://charleroi-noel.be/",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://charleroi-noel.be/",
+        "https://visitwallonia.fr/fr/produit/evenement/marche-de-noel/le-village-de-noel-a-charleroi/6787",
+        "https://www.arukikata.co.jp/tokuhain/275044/"
+      ]
+    },
+    {
+      "id": "belgium-tournai-2025",
+      "slug": "tournai",
+      "year": 2025,
+      "name": {
+        "ja": "トゥルネー トゥルネー・ディヴェール",
+        "en": "Tournai d'Hiver",
+        "de": "Tournai d'Hiver"
+      },
+      "country": "Belgium",
+      "city": "トゥルネー（Tournai / Doornik）",
+      "region": "Wallonia",
+      "venue": "グランプラス（Tournai d'Hiver）",
+      "coordinates": {
+        "lat": 50.6072,
+        "lng": 3.389
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "2025年12月予定（発表待ち）",
+        "is_estimated": true
+      },
+      "url": "https://www.tournai.be/tournai-dhiver",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://visitwallonia.be/fr-be/content/marche-de-noel-tournai-tournai-dhiver",
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.tournai.be/tournai-dhiver"
+      ]
+    },
+    {
+      "id": "belgium-namur-2025",
+      "slug": "namur",
+      "year": 2025,
+      "name": {
+        "ja": "ナミュール クリスマスマーケット",
+        "en": "Namur Christmas Market",
+        "de": "Namur Weihnachtsmarkt"
+      },
+      "country": "Belgium",
+      "city": "ナミュール（Namur / Namen）",
+      "region": "Wallonia",
+      "venue": "ナミュール歴史地区（Pl. de l'Ange など）",
+      "coordinates": {
+        "lat": 50.4674,
+        "lng": 4.8718
+      },
+      "period": {
+        "start": "2025-11-28",
         "end": "2025-12-31",
-        "note": "2024年の日程をもとにした暫定値",
-        "is_estimated": true
+        "note": "ワロニー観光局",
+        "is_estimated": false
       },
-      "url": "https://www.weihnachteninberlin.de",
+      "url": "https://visitwallonia.com/en-gb/content/namur-christmas-market",
       "status": "scheduled",
-      "opening_hours": "毎日 12:00-22:00（予定）",
-      "last_verified": "2025-09-19"
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://visitwallonia.com/en-gb/content/namur-christmas-market",
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.namurtourisme.be/en/evenements/marche-de-noel-de-namur/"
+      ]
     },
     {
-      "id": "muenchen-2025",
-      "slug": "muenchen",
+      "id": "belgium-hasselt-2025",
+      "slug": "hasselt",
       "year": 2025,
       "name": {
-        "ja": "ミュンヘン クリストキンドルマルクト",
-        "de": "Münchner Christkindlmarkt",
-        "en": "Munich Christkindlmarkt"
+        "ja": "ハッセルト ウィンターランド",
+        "en": "Winterland Hasselt",
+        "de": "Hasselt Winterland"
       },
-      "city": "ミュンヘン",
-      "region": "バイエルン州",
-      "venue": "マリエン広場",
-      "address": "Marienplatz 1, 80331 München",
-      "coordinates": { "lat": 48.137154, "lng": 11.576124 },
+      "country": "Belgium",
+      "city": "ハッセルト（Hasselt）",
+      "region": "Flanders",
+      "venue": "コローンネル・ドラシーヌ公園（Winterland会場）",
+      "coordinates": {
+        "lat": 50.9307,
+        "lng": 5.3326
+      },
       "period": {
-        "start": "2025-11-27",
-        "end": "2025-12-24",
-        "note": "公式発表待ち",
+        "start": "",
+        "end": "",
+        "note": "日程未発表",
         "is_estimated": true
       },
-      "url": "https://www.muenchen.travel/",
+      "url": "https://www.winterland.be/en",
       "status": "scheduled",
-      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00（予定）",
-      "last_verified": "2025-09-19"
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.winterland.be/en"
+      ]
     },
     {
-      "id": "hamburg-2025",
-      "slug": "hamburg",
+      "id": "belgium-brussels-2025",
+      "slug": "brussels",
       "year": 2025,
       "name": {
-        "ja": "ハンブルク 市庁舎前マーケット",
-        "de": "Historischer Weihnachtsmarkt auf dem Rathausmarkt",
-        "en": "Hamburg Rathaus Christmas Market"
+        "ja": "ブリュッセル ウィンターワンダーズ",
+        "en": "Brussels Winter Wonders",
+        "de": "Brüssel Winter Wonders"
       },
-      "city": "ハンブルク",
-      "region": "ハンブルク州",
-      "venue": "市庁舎前 ラートハウスマルクト",
-      "address": "Rathausmarkt 1, 20095 Hamburg",
-      "coordinates": { "lat": 53.551086, "lng": 9.993682 },
+      "country": "Belgium",
+      "city": "ブリュッセル（Bruxelles / Brussel）",
+      "region": "Brussels-Capital Region",
+      "venue": "グランプラスとボルス広場周辺",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517
+      },
       "period": {
-        "start": "2025-11-24",
-        "end": "2025-12-30",
-        "note": "2024年実績ベース",
+        "start": "",
+        "end": "",
+        "note": "2025年日程未発表（例年11月末〜1月初旬）",
         "is_estimated": true
       },
-      "url": "http://www.hamburger-weihnachtsmarkt.com/",
+      "url": "https://www.brussels.be/winter-wonders",
       "status": "scheduled",
-      "opening_hours": "日〜木 11:00-21:00 / 金土 11:00-22:00",
-      "last_verified": "2025-09-19"
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.brussels.be/winter-wonders"
+      ],
+      "notes": "Winter Wonders として開催予定。詳細は公式発表待ち。"
+    },
+    {
+      "id": "belgium-bruges-2025",
+      "slug": "bruges",
+      "year": 2025,
+      "name": {
+        "ja": "ブルッヘ Winter Glow",
+        "en": "Bruges Winter Glow",
+        "de": "Brügge Winter Glow"
+      },
+      "country": "Belgium",
+      "city": "ブルッヘ（Brugge）",
+      "region": "Flanders",
+      "venue": "マルクト広場とシモン・ステフェン広場",
+      "coordinates": {
+        "lat": 51.2093,
+        "lng": 3.2247
+      },
+      "period": {
+        "start": "2025-11-21",
+        "end": "2026-01-04",
+        "note": "公式発表",
+        "is_estimated": false
+      },
+      "url": "https://www.visitbruges.be/en/winter-glow",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.visitbruges.be/en/winter-glow"
+      ]
+    },
+    {
+      "id": "belgium-ghent-2025",
+      "slug": "ghent",
+      "year": 2025,
+      "name": {
+        "ja": "ヘント ウィンターフェスティバル",
+        "en": "Ghent Winter Festival",
+        "de": "Gent Winterfeste"
+      },
+      "country": "Belgium",
+      "city": "ヘント（Gent / Gand）",
+      "region": "Flanders",
+      "venue": "コレンマルクト広場周辺",
+      "coordinates": {
+        "lat": 51.0543,
+        "lng": 3.7174
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "2025年12月予定（発表待ち）",
+        "is_estimated": true
+      },
+      "url": "https://gentsewinterfeesten.be/",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://gentsewinterfeesten.be/",
+        "https://visit.gent.be/en/calendar/christmas-market",
+        "https://www.arukikata.co.jp/tokuhain/275044/"
+      ],
+      "notes": "Gentse Winterfeesten として開催。"
+    },
+    {
+      "id": "belgium-mechelen-2025",
+      "slug": "mechelen",
+      "year": 2025,
+      "name": {
+        "ja": "メヘレン ウィンター",
+        "en": "Mechelen Winter",
+        "de": "Mechelen Winter"
+      },
+      "country": "Belgium",
+      "city": "メヘレン（Mechelen / Malines）",
+      "region": "Flanders",
+      "venue": "グローテマルクトと市内中心部",
+      "coordinates": {
+        "lat": 51.025,
+        "lng": 4.4777
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "日程未発表",
+        "is_estimated": true
+      },
+      "url": "https://visit.mechelen.be/mechelen-houdt-je-warm-",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://visit.mechelen.be/mechelen-houdt-je-warm-",
+        "https://www.arukikata.co.jp/tokuhain/275044/"
+      ]
+    },
+    {
+      "id": "belgium-mons-2025",
+      "slug": "mons",
+      "year": 2025,
+      "name": {
+        "ja": "モンス クール・アン・ネージュ",
+        "en": "Mons Cœur en Neige",
+        "de": "Mons Cœur en Neige"
+      },
+      "country": "Belgium",
+      "city": "モンス（Mons / Bergen）",
+      "region": "Wallonia",
+      "venue": "グランプラス周辺",
+      "coordinates": {
+        "lat": 50.4542,
+        "lng": 3.9523
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "2025年12月〜2026年1月予定（発表待ち）",
+        "is_estimated": true
+      },
+      "url": "https://monscoeurenneige.be/",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://monscoeurenneige.be/",
+        "https://visitwallonia.fr/fr/produit/evenement/marche-de-noel/mons-coeur-en-neige-profitez-des-feeries-de-noel/3892",
+        "https://www.arukikata.co.jp/tokuhain/275044/"
+      ]
+    },
+    {
+      "id": "belgium-liege-2025",
+      "slug": "liege",
+      "year": 2025,
+      "name": {
+        "ja": "リエージュ クリスマスビレッジ",
+        "en": "Liège Christmas Village",
+        "de": "Lüttich Weihnachtsdorf"
+      },
+      "country": "Belgium",
+      "city": "リエージュ（Liège / Luik）",
+      "region": "Wallonia",
+      "venue": "サン・ランベール広場と周辺",
+      "coordinates": {
+        "lat": 50.6326,
+        "lng": 5.5797
+      },
+      "period": {
+        "start": "2025-11-28",
+        "end": "2026-01-04",
+        "note": "リエージュ観光局",
+        "is_estimated": false
+      },
+      "url": "https://www.villagedenoel.be/en",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.villagedenoel.be/en",
+        "https://www.visitezliege.be/en/offre/le-village-de-noel"
+      ]
+    },
+    {
+      "id": "belgium-leuven-2025",
+      "slug": "leuven",
+      "year": 2025,
+      "name": {
+        "ja": "ルーヴェン クリスマスマーケット",
+        "en": "Leuven Christmas Market",
+        "de": "Löwen Weihnachtsmarkt"
+      },
+      "country": "Belgium",
+      "city": "ルーヴェン（Leuven / Louvain）",
+      "region": "Flanders",
+      "venue": "ラドハウス前広場ほか",
+      "coordinates": {
+        "lat": 50.8798,
+        "lng": 4.7005
+      },
+      "period": {
+        "start": "",
+        "end": "",
+        "note": "日程未定（公式サイト参照）",
+        "is_estimated": true
+      },
+      "url": "https://leuvensekerstmarkt.com/",
+      "status": "scheduled",
+      "last_verified": "2025-09-19",
+      "sources": [
+        "https://leuvensekerstmarkt.com/",
+        "https://www.arukikata.co.jp/tokuhain/275044/",
+        "https://www.visitleuven.be/en/christmas-market"
+      ]
     },
     {
       "id": "koeln-2025",
@@ -91,7 +494,10 @@
       "region": "ノルトライン＝ヴェストファーレン州",
       "venue": "ケルン大聖堂前 Roncalliplatz",
       "address": "Roncalliplatz 1, 50667 Köln",
-      "coordinates": { "lat": 50.941278, "lng": 6.958281 },
+      "coordinates": {
+        "lat": 50.941278,
+        "lng": 6.958281
+      },
       "period": {
         "start": "2025-11-24",
         "end": "2025-12-23",
@@ -101,32 +507,11 @@
       "url": "https://www.koelnerweihnachtsmarkt.de",
       "status": "scheduled",
       "opening_hours": "11:00-22:00（予定）",
-      "last_verified": "2025-09-19"
-    },
-    {
-      "id": "frankfurt-2025",
-      "slug": "frankfurt",
-      "year": 2025,
-      "name": {
-        "ja": "フランクフルト クリスマスマーケット",
-        "de": "Frankfurter Weihnachtsmarkt",
-        "en": "Frankfurt Christmas Market"
-      },
-      "city": "フランクフルト・アム・マイン",
-      "region": "ヘッセン州",
-      "venue": "レーマー広場〜パウルス教会周辺",
-      "address": "Römerberg 27, 60311 Frankfurt am Main",
-      "coordinates": { "lat": 50.110924, "lng": 8.682127 },
-      "period": {
-        "start": "2025-11-24",
-        "end": "2025-12-22",
-        "note": "2024年実績ベース",
-        "is_estimated": true
-      },
-      "url": "https://www.frankfurt-tourismus.de/",
-      "status": "scheduled",
-      "opening_hours": "月〜土 10:00-21:00 / 日 11:00-21:00",
-      "last_verified": "2025-09-19"
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
     },
     {
       "id": "stuttgart-2025",
@@ -141,7 +526,10 @@
       "region": "バーデン＝ヴュルテンベルク州",
       "venue": "シラー広場〜王宮広場",
       "address": "Schillerplatz 1, 70173 Stuttgart",
-      "coordinates": { "lat": 48.775846, "lng": 9.182932 },
+      "coordinates": {
+        "lat": 48.775846,
+        "lng": 9.182932
+      },
       "period": {
         "start": "2025-11-26",
         "end": "2025-12-23",
@@ -151,82 +539,11 @@
       "url": "https://www.stuttgarter-weihnachtsmarkt.de",
       "status": "scheduled",
       "opening_hours": "毎日 10:00-21:00（予定）",
-      "last_verified": "2025-09-19"
-    },
-    {
-      "id": "dresden-2025",
-      "slug": "dresden",
-      "year": 2025,
-      "name": {
-        "ja": "ドレスデン シュトリーツェルマルクト",
-        "de": "Dresdner Striezelmarkt",
-        "en": "Dresden Striezelmarkt"
-      },
-      "city": "ドレスデン",
-      "region": "ザクセン州",
-      "venue": "アルトマルクト広場",
-      "address": "Altmarkt, 01067 Dresden",
-      "coordinates": { "lat": 51.050409, "lng": 13.737262 },
-      "period": {
-        "start": "2025-11-27",
-        "end": "2025-12-24",
-        "note": "公式発表待ち",
-        "is_estimated": true
-      },
-      "url": "https://www.weihnachtsmarkt-dresden.de",
-      "status": "scheduled",
-      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
-      "last_verified": "2025-09-19"
-    },
-    {
-      "id": "leipzig-2025",
-      "slug": "leipzig",
-      "year": 2025,
-      "name": {
-        "ja": "ライプツィヒ クリスマスマーケット",
-        "de": "Leipziger Weihnachtsmarkt",
-        "en": "Leipzig Christmas Market"
-      },
-      "city": "ライプツィヒ",
-      "region": "ザクセン州",
-      "venue": "マルクト広場",
-      "address": "Markt 1, 04109 Leipzig",
-      "coordinates": { "lat": 51.3396955, "lng": 12.373075 },
-      "period": {
-        "start": "2025-11-25",
-        "end": "2025-12-23",
-        "note": "公式発表待ち",
-        "is_estimated": true
-      },
-      "url": "https://www.leipzig.de/weihnachtsmarkt",
-      "status": "scheduled",
-      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
-      "last_verified": "2025-09-19"
-    },
-    {
-      "id": "nuernberg-2025",
-      "slug": "nuernberg",
-      "year": 2025,
-      "name": {
-        "ja": "ニュルンベルク クリストキンドレスマルクト",
-        "de": "Nürnberger Christkindlesmarkt",
-        "en": "Nuremberg Christkindlesmarkt"
-      },
-      "city": "ニュルンベルク",
-      "region": "バイエルン州",
-      "venue": "中央広場（ハウプトマルクト）",
-      "address": "Hauptmarkt, 90403 Nürnberg",
-      "coordinates": { "lat": 49.452103, "lng": 11.076665 },
-      "period": {
-        "start": "2025-11-28",
-        "end": "2025-12-24",
-        "note": "公式発表待ち",
-        "is_estimated": true
-      },
-      "url": "https://www.christkindlesmarkt.de",
-      "status": "scheduled",
-      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
-      "last_verified": "2025-09-19"
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
     },
     {
       "id": "duesseldorf-2025",
@@ -241,7 +558,10 @@
       "region": "ノルトライン＝ヴェストファーレン州",
       "venue": "旧市街 Altstadt 一帯",
       "address": "Marktplatz 2, 40213 Düsseldorf",
-      "coordinates": { "lat": 51.227741, "lng": 6.773456 },
+      "coordinates": {
+        "lat": 51.227741,
+        "lng": 6.773456
+      },
       "period": {
         "start": "2025-11-21",
         "end": "2025-12-30",
@@ -252,7 +572,235 @@
       "status": "scheduled",
       "opening_hours": "日〜木 11:00-20:00 / 金土 11:00-21:00",
       "last_verified": "2025-09-19",
-      "notes": "出典ページに直接リンク無し"
+      "notes": "出典ページに直接リンク無し",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "dresden-2025",
+      "slug": "dresden",
+      "year": 2025,
+      "name": {
+        "ja": "ドレスデン シュトリーツェルマルクト",
+        "de": "Dresdner Striezelmarkt",
+        "en": "Dresden Striezelmarkt"
+      },
+      "city": "ドレスデン",
+      "region": "ザクセン州",
+      "venue": "アルトマルクト広場",
+      "address": "Altmarkt, 01067 Dresden",
+      "coordinates": {
+        "lat": 51.050409,
+        "lng": 13.737262
+      },
+      "period": {
+        "start": "2025-11-27",
+        "end": "2025-12-24",
+        "note": "公式発表待ち",
+        "is_estimated": true
+      },
+      "url": "https://www.weihnachtsmarkt-dresden.de",
+      "status": "scheduled",
+      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "nuernberg-2025",
+      "slug": "nuernberg",
+      "year": 2025,
+      "name": {
+        "ja": "ニュルンベルク クリストキンドレスマルクト",
+        "de": "Nürnberger Christkindlesmarkt",
+        "en": "Nuremberg Christkindlesmarkt"
+      },
+      "city": "ニュルンベルク",
+      "region": "バイエルン州",
+      "venue": "中央広場（ハウプトマルクト）",
+      "address": "Hauptmarkt, 90403 Nürnberg",
+      "coordinates": {
+        "lat": 49.452103,
+        "lng": 11.076665
+      },
+      "period": {
+        "start": "2025-11-28",
+        "end": "2025-12-24",
+        "note": "公式発表待ち",
+        "is_estimated": true
+      },
+      "url": "https://www.christkindlesmarkt.de",
+      "status": "scheduled",
+      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "hamburg-2025",
+      "slug": "hamburg",
+      "year": 2025,
+      "name": {
+        "ja": "ハンブルク 市庁舎前マーケット",
+        "de": "Historischer Weihnachtsmarkt auf dem Rathausmarkt",
+        "en": "Hamburg Rathaus Christmas Market"
+      },
+      "city": "ハンブルク",
+      "region": "ハンブルク州",
+      "venue": "市庁舎前 ラートハウスマルクト",
+      "address": "Rathausmarkt 1, 20095 Hamburg",
+      "coordinates": {
+        "lat": 53.551086,
+        "lng": 9.993682
+      },
+      "period": {
+        "start": "2025-11-24",
+        "end": "2025-12-30",
+        "note": "2024年実績ベース",
+        "is_estimated": true
+      },
+      "url": "http://www.hamburger-weihnachtsmarkt.com/",
+      "status": "scheduled",
+      "opening_hours": "日〜木 11:00-21:00 / 金土 11:00-22:00",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "frankfurt-2025",
+      "slug": "frankfurt",
+      "year": 2025,
+      "name": {
+        "ja": "フランクフルト クリスマスマーケット",
+        "de": "Frankfurter Weihnachtsmarkt",
+        "en": "Frankfurt Christmas Market"
+      },
+      "city": "フランクフルト・アム・マイン",
+      "region": "ヘッセン州",
+      "venue": "レーマー広場〜パウルス教会周辺",
+      "address": "Römerberg 27, 60311 Frankfurt am Main",
+      "coordinates": {
+        "lat": 50.110924,
+        "lng": 8.682127
+      },
+      "period": {
+        "start": "2025-11-24",
+        "end": "2025-12-22",
+        "note": "2024年実績ベース",
+        "is_estimated": true
+      },
+      "url": "https://www.frankfurt-tourismus.de/",
+      "status": "scheduled",
+      "opening_hours": "月〜土 10:00-21:00 / 日 11:00-21:00",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "berlin-2025",
+      "slug": "berlin",
+      "year": 2025,
+      "name": {
+        "ja": "ベルリン クリスマスマーケット",
+        "de": "Weihnachtsmärkte in Berlin",
+        "en": "Berlin Christmas Markets"
+      },
+      "city": "ベルリン",
+      "region": "Berlin",
+      "venue": "ジャンダルメンマルクト広場 ほか",
+      "address": "Gendarmenmarkt, 10117 Berlin",
+      "coordinates": {
+        "lat": 52.516275,
+        "lng": 13.392514
+      },
+      "period": {
+        "start": "2025-11-24",
+        "end": "2025-12-31",
+        "note": "2024年の日程をもとにした暫定値",
+        "is_estimated": true
+      },
+      "url": "https://www.weihnachteninberlin.de",
+      "status": "scheduled",
+      "opening_hours": "毎日 12:00-22:00（予定）",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "muenchen-2025",
+      "slug": "muenchen",
+      "year": 2025,
+      "name": {
+        "ja": "ミュンヘン クリストキンドルマルクト",
+        "de": "Münchner Christkindlmarkt",
+        "en": "Munich Christkindlmarkt"
+      },
+      "city": "ミュンヘン",
+      "region": "バイエルン州",
+      "venue": "マリエン広場",
+      "address": "Marienplatz 1, 80331 München",
+      "coordinates": {
+        "lat": 48.137154,
+        "lng": 11.576124
+      },
+      "period": {
+        "start": "2025-11-27",
+        "end": "2025-12-24",
+        "note": "公式発表待ち",
+        "is_estimated": true
+      },
+      "url": "https://www.muenchen.travel/",
+      "status": "scheduled",
+      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00（予定）",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
+    },
+    {
+      "id": "leipzig-2025",
+      "slug": "leipzig",
+      "year": 2025,
+      "name": {
+        "ja": "ライプツィヒ クリスマスマーケット",
+        "de": "Leipziger Weihnachtsmarkt",
+        "en": "Leipzig Christmas Market"
+      },
+      "city": "ライプツィヒ",
+      "region": "ザクセン州",
+      "venue": "マルクト広場",
+      "address": "Markt 1, 04109 Leipzig",
+      "coordinates": {
+        "lat": 51.3396955,
+        "lng": 12.373075
+      },
+      "period": {
+        "start": "2025-11-25",
+        "end": "2025-12-23",
+        "note": "公式発表待ち",
+        "is_estimated": true
+      },
+      "url": "https://www.leipzig.de/weihnachtsmarkt",
+      "status": "scheduled",
+      "opening_hours": "日〜木 10:00-21:00 / 金土 10:00-22:00",
+      "last_verified": "2025-09-19",
+      "country": "Germany",
+      "sources": [
+        "https://japan.diplo.de/ja-ja/themen/willkommen/weihnachtsmaerkte-915164"
+      ]
     }
   ]
 }

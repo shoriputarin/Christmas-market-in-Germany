@@ -28,6 +28,7 @@ export function MarketList({
         market.name.ja,
         market.name.en,
         market.name.de,
+        market.country,
         market.city,
         market.region,
       ]
@@ -68,6 +69,7 @@ export function MarketList({
                 aria-pressed={isSelected}
               >
                 <div className="market-list__item-header">
+                  <span className="market-list__item-country">{market.country}</span>
                   <span className="market-list__item-city">{market.city}</span>
                   <span className="market-list__item-region">{market.region}</span>
                 </div>

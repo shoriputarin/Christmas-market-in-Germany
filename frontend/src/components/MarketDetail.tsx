@@ -14,15 +14,26 @@ export function MarketDetail({ market }: MarketDetailProps) {
     );
   }
 
+  const regionLabel = [market.country, market.region].filter(Boolean).join(' / ');
+  const sources = market.sources ?? [];
+
   return (
     <section aria-live="polite" className="market-detail">
       <header>
-        <p className="market-detail__region">{market.region}</p>
+        <p className="market-detail__region">{regionLabel}</p>
         <h2>{market.name.ja}</h2>
         <p className="market-detail__subtitle">{market.name.de ?? market.name.en}</p>
       </header>
 
       <dl>
+        <div>
+          <dt>国</dt>
+          <dd>{market.country}</dd>
+        </div>
+        <div>
+          <dt>地域</dt>
+          <dd>{market.region}</dd>
+        </div>
         <div>
           <dt>開催都市</dt>
           <dd>{market.city}</dd>
@@ -64,11 +75,7 @@ export function MarketDetail({ market }: MarketDetailProps) {
           <div>
             <dt>公式リンク</dt>
             <dd>
-              <a
-                href={market.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={market.url} target="_blank" rel="noopener noreferrer">
                 公式サイトを開く
               </a>
             </dd>
@@ -77,6 +84,21 @@ export function MarketDetail({ market }: MarketDetailProps) {
           <div>
             <dt>公式リンク</dt>
             <dd>出典にURLが記載されていません</dd>
+          </div>
+        )}
+        {sources.length > 0 && (
+          <div>
+            <dt>参照リンク</dt>
+            <dd>
+              {sources.map((src, index) => (
+                <span key={src}>
+                  <a href={src} target="_blank" rel="noopener noreferrer">
+                    リンク{index + 1}
+                  </a>
+                  {index < sources.length - 1 && ' / '}
+                </span>
+              ))}
+            </dd>
           </div>
         )}
         {market.notes && (

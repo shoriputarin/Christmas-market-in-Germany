@@ -165,7 +165,6 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
-
 .market-list__item:hover,
 .market-list__item:focus-visible {
   border-color: #7c3aed;
@@ -184,11 +183,30 @@
 
 .market-list__item-header {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: center;
   font-size: 0.85rem;
   color: #52606d;
 }
 
+.market-list__item-country {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+
+.market-list__item-city {
+  font-weight: 600;
+  color: #334155;
+}
+
+.market-list__item-region {
+  color: #64748b;
+}
 .market-list__item-period,
 .market-list__item-venue {
   margin: 0;
