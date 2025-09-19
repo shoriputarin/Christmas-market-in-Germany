@@ -50,6 +50,33 @@
   padding: 0 2rem 2rem;
 }
 
+.app__view-toggle {
+  display: none;
+}
+
+.app__view-toggle-button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #4c5a67;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app__view-toggle-button:is(:focus-visible, :hover) {
+  outline: none;
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.app__view-toggle-button.is-active {
+  background: #ffffff;
+  color: #1d4ed8;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12);
+}
+
 .app__sidebar {
   background: #f5f7fb;
   border-radius: 16px;
@@ -237,7 +264,7 @@
 .map-container {
   flex: 1;
   position: relative;
-  min-height: 600px;
+  min-height: clamp(480px, 60vh, 640px);
 }
 
 .map {
@@ -280,7 +307,7 @@
   }
 
   .map-container {
-    min-height: 400px;
+    min-height: clamp(360px, 55vh, 520px);
   }
 }
 
@@ -291,13 +318,34 @@
 
   .app__layout {
     padding: 0 1.5rem 1.5rem;
+    gap: 1rem;
   }
 
   .app__sidebar {
     padding: 1rem;
+    max-height: none;
+  }
+
+  .app__view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    background: #dbe2f4;
+    border-radius: 999px;
+    padding: 0.4rem;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 5;
   }
 
   .app__footer {
     padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .app__map-helper {
+    font-size: 0.85rem;
+  }
+
+  .map-container {
+    min-height: clamp(320px, 55vh, 480px);
   }
 }

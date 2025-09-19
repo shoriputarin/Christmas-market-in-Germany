@@ -7,16 +7,45 @@ import { MarketDetail } from './components/MarketDetail';
 import { MapView } from './components/MapView';
 import { formatDate } from './utils/date';
 
+type MobilePane = 'list' | 'map';
+
 function App() {
   const { markets, dataset, loading, error } = useMarkets();
   const [selectedMarketId, setSelectedMarketId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isMobileLayout, setIsMobileLayout] = useState(false);
+  const [activeMobilePane, setActiveMobilePane] = useState<MobilePane>('list');
 
   useEffect(() => {
     if (!selectedMarketId && markets.length > 0) {
       setSelectedMarketId(markets[0].id);
     }
   }, [markets, selectedMarketId]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const listener = (event: MediaQueryListEvent) => {
+      setIsMobileLayout(event.matches);
+    };
+
+    setIsMobileLayout(mediaQuery.matches);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', listener);
+      return () => mediaQuery.removeEventListener('change', listener);
+    }
+
+    // Fallback for older browsers
+    mediaQuery.addListener(listener);
+    return () => mediaQuery.removeListener(listener);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileLayout) {
+      setActiveMobilePane('list');
+    }
+  }, [isMobileLayout]);
 
   const selectedMarket = useMemo<Market | null>(() => {
     return markets.find((market) => market.id === selectedMarketId) ?? null;
@@ -51,7 +80,34 @@ function App() {
       </header>
 
       <main className="app__layout">
-        <aside className="app__sidebar">
+        {isMobileLayout && (
+          <div className="app__view-toggle" role="tablist" aria-label="表示切り替え">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeMobilePane === 'list'}
+              className={`app__view-toggle-button ${activeMobilePane === 'list' ? 'is-active' : ''}`}
+              onClick={() => setActiveMobilePane('list')}
+            >
+              一覧
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeMobilePane === 'map'}
+              className={`app__view-toggle-button ${activeMobilePane === 'map' ? 'is-active' : ''}`}
+              onClick={() => setActiveMobilePane('map')}
+            >
+              地図
+            </button>
+          </div>
+        )}
+
+        <aside
+          className="app__sidebar"
+          hidden={isMobileLayout && activeMobilePane !== 'list'}
+          aria-hidden={isMobileLayout && activeMobilePane !== 'list'}
+        >
           {loading && <p role="status">データを読み込み中です…</p>}
           {error && !loading && (
             <p role="alert" className="app__error">
@@ -73,7 +129,12 @@ function App() {
           )}
         </aside>
 
-        <section className="app__map" aria-labelledby="map-heading">
+        <section
+          className="app__map"
+          aria-labelledby="map-heading"
+          hidden={isMobileLayout && activeMobilePane !== 'map'}
+          aria-hidden={isMobileLayout && activeMobilePane !== 'map'}
+        >
           <h2 id="map-heading" className="sr-only">
             地図表示
           </h2>
