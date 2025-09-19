@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo } from 'react';
+﻿import { useEffect, useMemo, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import type { Market } from '../types';
@@ -13,8 +13,6 @@ const DEFAULT_POSITION: [number, number] = [51.163375, 10.447683]; // Germany ce
 const DEFAULT_ZOOM = 5;
 
 export function MapView({ markets, selectedMarketId, onSelect }: MapViewProps) {
-  const selectedMarket = markets.find((market) => market.id === selectedMarketId) ?? null;
-
   const bounds = useMemo(() => {
     if (markets.length === 0) {
       return null;
@@ -26,6 +24,39 @@ export function MapView({ markets, selectedMarketId, onSelect }: MapViewProps) {
     return L.latLngBounds(latLngs);
   }, [markets]);
 
+  const markersRef = useRef(new Map<string, L.Marker>());
+
+  const icons = useMemo(() => {
+    const baseOptions = {
+      iconSize: [28, 28] as [number, number],
+      iconAnchor: [14, 27] as [number, number],
+      popupAnchor: [0, -24] as [number, number],
+    };
+
+    const defaultIcon = L.divIcon({
+      ...baseOptions,
+      className: 'map-marker',
+      html: '<span class="map-marker__inner"></span>',
+    });
+
+    const activeIcon = L.divIcon({
+      ...baseOptions,
+      className: 'map-marker map-marker--active',
+      html: '<span class="map-marker__inner"></span>',
+    });
+
+    return { defaultIcon, activeIcon };
+  }, []);
+
+  useEffect(() => {
+    if (!selectedMarketId) {
+      return;
+    }
+
+    const marker = markersRef.current.get(selectedMarketId);
+    marker?.openPopup();
+  }, [selectedMarketId]);
+
   return (
     <div className="map-container" role="application" aria-label="地図表示">
       <MapContainer center={DEFAULT_POSITION} zoom={DEFAULT_ZOOM} scrollWheelZoom className="map">
@@ -35,12 +66,19 @@ export function MapView({ markets, selectedMarketId, onSelect }: MapViewProps) {
         />
 
         {bounds && <FitBounds bounds={bounds} />}
-        {selectedMarket && <FocusOnSelection market={selectedMarket} />}
 
         {markets.map((market) => (
           <Marker
             key={market.id}
             position={[market.coordinates.lat, market.coordinates.lng]}
+            icon={market.id === selectedMarketId ? icons.activeIcon : icons.defaultIcon}
+            ref={(markerInstance) => {
+              if (markerInstance) {
+                markersRef.current.set(market.id, markerInstance);
+              } else {
+                markersRef.current.delete(market.id);
+              }
+            }}
             eventHandlers={{
               click: () => onSelect(market),
             }}
@@ -72,19 +110,6 @@ function FitBounds({ bounds }: { bounds: L.LatLngBoundsExpression }) {
   useEffect(() => {
     map.fitBounds(bounds, { padding: [32, 32] });
   }, [map, bounds]);
-
-  return null;
-}
-
-function FocusOnSelection({ market }: { market: Market }) {
-  const map = useMap();
-
-  useEffect(() => {
-    map.flyTo([market.coordinates.lat, market.coordinates.lng], 11, {
-      animate: true,
-      duration: 0.75,
-    });
-  }, [map, market]);
 
   return null;
 }

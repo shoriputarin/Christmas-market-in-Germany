@@ -349,3 +349,41 @@
     min-height: clamp(320px, 55vh, 480px);
   }
 }
+
+.map-marker {
+  --marker-color: #2563eb;
+  display: block;
+}
+
+.map-marker__inner {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--marker-color);
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+}
+
+.map-marker__inner::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid var(--marker-color);
+}
+
+.map-marker--active {
+  --marker-color: #f97316;
+}
+
+.map-marker--active .map-marker__inner {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(249, 115, 22, 0.45);
+}
